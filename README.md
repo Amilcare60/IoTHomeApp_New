@@ -17,6 +17,34 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici (PC, S
 - Comunicazione tra dispositivi tramite MQTT
 - Interfaccia di test API tramite Swagger
 
+## API disponibili
+
+### Home
+
+- **GET** `/api/home/devices`  
+  Restituisce la lista dei dispositivi IoT registrati.
+
+### IoTDevice
+
+- ### IoTDevice
+
+- **GET** `/api/iot/status`  
+  Restituisce lo stato attuale dei dispositivi IoT.
+
+- **POST** `/api/iot/command`  
+  Invia un comando a uno o più dispositivi IoT.
+
+- **PUT** `/api/iot/update`  
+  Aggiorna le informazioni di un dispositivo IoT esistente.  
+  **Esempio di richiesta JSON:**
+  ```json
+  {
+    "name": "SmartTV",
+    "status": "Online",
+    "ip": "192.168.1.3"
+  }
+  ```
+
 ## Come avviare il progetto
 
 1. Clona il repository:
