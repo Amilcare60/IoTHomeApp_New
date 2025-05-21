@@ -26,8 +26,6 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici (PC, S
 
 ### IoTDevice
 
-- ### IoTDevice
-
 - **GET** `/api/iot/status`  
   Restituisce lo stato attuale dei dispositivi IoT.
 
@@ -52,13 +50,25 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici (PC, S
    git clone https://github.com/Amilcare60/IoTHomeApp_New.git
    ```
 2. Apri la cartella in Visual Studio Code.
-3. Ripristina i pacchetti NuGet e avvia il progetto.
-4. Accedi a Swagger su `http://localhost:5000/swagger` (o la porta configurata).
+3. Ripristina i pacchetti NuGet e avvia il progetto:
+   ```sh
+   dotnet restore
+   dotnet run
+   ```
+4. Accedi a Swagger su `http://localhost:5089/swagger` (o la porta configurata).
 
 ## Note
 
-- Assicurati che Mosquitto sia in esecuzione per la comunicazione MQTT.
+- Assicurati che **Mosquitto** sia in esecuzione per la comunicazione MQTT:
+  ```sh
+  mosquitto
+  ```
+- Per testare la ricezione MQTT, puoi usare una console app come `MqttDeviceListener` o il comando:
+  ```sh
+  mosquitto_sub -h localhost -t home/devices/update
+  ```
 - Configura il database tramite SSMS se necessario.
+
 ## Come contribuire
 
 1. Fai un fork del repository.
@@ -74,6 +84,7 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici (PC, S
    git push origin nome-branch
    ```
 5. Apri una Pull Request su GitHub.
+
 ---
 
-**Autore:** Amilcare60  
+**Autore:** Amilcare60
