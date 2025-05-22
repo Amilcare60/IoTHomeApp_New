@@ -113,6 +113,57 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici tramit
   ```
 - Configura il database tramite SSMS se necessario.
 
+Aggiornare il READme
+assicurati che le modifiche siano salvate in: 
+C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia\README.md
+apri il terminale e digita:
+cd "C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia"
+quindi:
+git add README.md
+git commit -m "Aggiorna README con istruzioni dettagliate per Swagger e MQTT"
+git push
+vai in github:
+Certo! Ecco i passaggi per **aggiornare il README su GitHub** e vedere subito le modifiche online:
+
+---
+
+### 1. **Salva il file README.md**  
+Assicurati che tutte le modifiche siano salvate in  
+`C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia\README.md`
+
+---
+
+### 2. **Apri il terminale nella cartella del progetto**  
+Se non sei già lì, spostati nella cartella:
+```sh
+cd "C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia"
+```
+
+---
+
+### 3. **Aggiungi, fai commit e push del README aggiornato**
+```sh
+git add README.md
+git commit -m "Aggiorna README con istruzioni dettagliate per Swagger e MQTT"
+git push
+```
+
+---
+
+### 4. **Vai su GitHub**
+Apri il tuo repository su [https://github.com/Amilcare60/IoTHomeApp_New](https://github.com/Amilcare60/IoTHomeApp_New)
+
+---
+
+### 5. **Aggiorna la pagina**
+Premi F5 o aggiorna la pagina:  
+**Vedrai il README aggiornato** nella home del repository, formattato in Markdown.
+
+---
+
+**Ora il tuo README sarà visibile e aggiornato anche su GitHub!**  
+Se vuoi vedere l’anteprima prima del push, puoi usare `Ctrl+Shift+V` su VS Code.
+
 ---
 
 **Autore:** Amilcare60
