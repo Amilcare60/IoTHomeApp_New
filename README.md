@@ -114,11 +114,7 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici tramit
 - Configura il database tramite SSMS se necessario.
 
 Aggiornare il READme
-assicurati che le modifiche siano salvate in: 
-C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia\README.md
-apri il terminale e digita:
 cd "C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia"
-quindi:
 git add README.md
 git commit -m "Aggiorna README con istruzioni dettagliate per Swagger e MQTT"
 git push
