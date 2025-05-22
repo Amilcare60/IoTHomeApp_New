@@ -43,32 +43,79 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici (PC, S
   }
   ```
 
+## # IoTHomeApp_New
+
+Applicazione per la gestione e la comunicazione tra dispositivi domestici tramite API REST e MQTT.
+
 ## Come avviare il progetto
 
-1. Clona il repository:
+1. **Avvia Mosquitto**  
+   Apri un terminale e lancia:
    ```sh
-   git clone https://github.com/Amilcare60/IoTHomeApp_New.git
+   mosquitto
    ```
-2. Apri la cartella in Visual Studio Code.
-3. Ripristina i pacchetti NuGet e avvia il progetto:
+   Lascia il terminale aperto: Mosquitto resterà in ascolto sulla porta 1883.
+
+2. **Avvia la console app MQTT (opzionale, per testare la ricezione)**  
+   Apri un nuovo terminale e spostati nella cartella della console app:
    ```sh
+   cd C:\Users\paolo\Desktop\MqttDeviceListener
+   dotnet run
+   ```
+   Vedrai:
+   ```
+   Connesso a Mosquitto!
+   Sottoscritto al topic home/devices/update
+   Premi un tasto per uscire..
+   ```
+   **Lascia la finestra aperta** per ricevere i messaggi MQTT.
+
+3. **Avvia l’API**  
+   Apri un altro terminale e spostati nella cartella del progetto API:
+   ```sh
+   cd "C:\Users\paolo\OneDrive\Desktop\IoTHomeApp_New - Copia"
    dotnet restore
    dotnet run
    ```
-4. Accedi a Swagger su `http://localhost:5089/swagger` (o la porta configurata).
+   L’API sarà disponibile su `http://localhost:5089/swagger`.
+
+4. **Aggiungi dispositivi tramite Swagger**  
+   - Vai su `http://localhost:5089/swagger`
+   - Espandi la sezione **POST /api/iot/add**
+   - Clicca su **Try it out** e inserisci un JSON come:
+     ```json
+     {
+       "name": "NuovoDispositivo",
+       "status": "Online",
+       "ip": "192.168.1.100"
+     }
+     ```
+   - Premi **Execute**  
+   - Vedrai la conferma che il dispositivo è stato aggiunto.
+
+5. **Aggiorna o visualizza dispositivi**
+   - Per aggiornare un dispositivo: usa **PUT /api/iot/update**
+   - Per vedere tutti i dispositivi: usa **GET /api/iot/all**
+
+6. **Testa la comunicazione MQTT**
+   - Dopo aver aggiunto o aggiornato un dispositivo, guarda il terminale della console app MQTT: dovresti vedere il messaggio ricevuto.
 
 ## Note
 
-- Assicurati che **Mosquitto** sia in esecuzione per la comunicazione MQTT:
+- Se ricevi un errore "address already in use", libera la porta con:
   ```sh
-  mosquitto
+  netstat -ano | findstr :5089
+  taskkill /PID <PID> /F
   ```
-- Per testare la ricezione MQTT, puoi usare una console app come `MqttDeviceListener` o il comando:
+- Puoi anche testare la ricezione MQTT con il comando:
   ```sh
   mosquitto_sub -h localhost -t home/devices/update
   ```
 - Configura il database tramite SSMS se necessario.
 
+---
+
+**Autore:** Amilcare60
 ## Come contribuire
 
 1. Fai un fork del repository.
