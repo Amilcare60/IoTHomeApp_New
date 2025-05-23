@@ -100,6 +100,46 @@ Applicazione per la gestione e la comunicazione tra dispositivi domestici tramit
 6. **Testa la comunicazione MQTT**
    - Dopo aver aggiunto o aggiornato un dispositivo, guarda il terminale della console app MQTT: dovresti vedere il messaggio ricevuto.
 
+🛠 Test MQTT - Pubblicazione e Ricezione Messaggi
+Per verificare la comunicazione MQTT tra dispositivi, segui questi passi:
+
+1️⃣ Avvia Mosquitto
+Apri un terminale e lancia:
+
+sh
+mosquitto
+Mosquitto resterà in ascolto sulla porta 1883.
+
+2️⃣ Avvia un client in ascolto sul topic
+Apri un nuovo terminale e lancia:
+
+sh
+mosquitto_sub -h localhost -t home/devices/command
+Il client ora ascolterà i messaggi inviati su questo topic.
+
+3️⃣ Invia un messaggio di test
+Apri un altro terminale e pubblica un comando MQTT:
+
+sh
+mosquitto_pub -h localhost -t home/devices/command -m "Accendi la SmartTV"
+Se tutto è configurato correttamente, il terminale in ascolto visualizzerà:
+
+Accendi la SmartTV
+✅ Verifica
+Se il messaggio non viene ricevuto:
+
+Assicurati che Mosquitto sia avviato (netstat -ano | findstr :1883).
+
+Riavvia Mosquitto (mosquitto).
+
+Riprova il comando di pubblicazione.
+
+📌 Ora puoi aggiornare il README con questa nuova sezione! Segui questi comandi per fare il commit e il push su GitHub:
+
+sh
+git add README.md
+git commit -m "Aggiunta sezione Test MQTT al README"
+git push
 ## Note
 
 - Se ricevi un errore "address already in use", libera la porta con:
@@ -159,6 +199,54 @@ Premi F5 o aggiorna la pagina:
 
 **Ora il tuo README sarà visibile e aggiornato anche su GitHub!**  
 Se vuoi vedere l’anteprima prima del push, puoi usare `Ctrl+Shift+V` su VS Code.
+### 6.
+Test MQTT - Pubblicazione e Ricezione Messaggi
+Per verificare la comunicazione MQTT tra dispositivi, segui questi passi:
+
+1️⃣ Avvia Mosquitto
+Apri un terminale e lancia:
+
+sh
+mosquitto
+Mosquitto resterà in ascolto sulla porta 1883.
+
+2️⃣ Avvia un client in ascolto sul topic
+Apri un nuovo terminale e lancia:
+
+sh
+mosquitto_sub -h localhost -t home/devices/command
+Il client ora ascolterà i messaggi inviati su questo topic.
+
+3️⃣ Invia un messaggio di test
+Apri un altro terminale e pubblica un comando MQTT:
+
+sh
+mosquitto_pub -h localhost -t home/devices/command -m "Accendi la SmartTV"
+Se tutto è configurato correttamente, il terminale in ascolto visualizzerà:
+
+Accendi la SmartTV
+✅ Verifica
+Se il messaggio non viene ricevuto:
+
+Assicurati che Mosquitto sia avviato (netstat -ano | findstr :1883).
+
+Riavvia Mosquitto (mosquitto).
+
+Riprova il comando di pubblicazione.
+
+📌 Ora puoi aggiornare il README con questa nuova sezione! Apri il terminale e lancia questi comandi per registrare e inviare le modifiche:
+
+sh
+git add README.md
+git commit -m "Aggiunta sezione Test MQTT al README"
+git push origin main
+## 🛠 Test MQTT - Pubblicazione e Ricezione Messaggi  
+Per verificare la comunicazione MQTT tra dispositivi, segui questi passi:
+
+### 1️⃣ **Avvia Mosquitto**  
+Apri un terminale e lancia:  
+```sh
+mosquitto
 
 ---
 
