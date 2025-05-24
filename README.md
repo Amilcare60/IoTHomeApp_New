@@ -233,6 +233,7 @@ Assicurati che Mosquitto sia avviato (netstat -ano | findstr :1883).
 Riavvia Mosquitto (mosquitto).
 
 Riprova il comando di pubblicazione.
+VERIFICA EFFETTUATA IN DATA 24/05/2025.
 
 📌 Ora puoi aggiornare il README con questa nuova sezione! Apri il terminale e lancia questi comandi per registrare e inviare le modifiche:
 
