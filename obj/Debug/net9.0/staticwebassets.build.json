@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "8Y/oQmZQVHHcySHwZk/E0oAdvrXWj7u57Kbtm8+gPvc=",
+  "Source": "AppIoTHome",
+  "BasePath": "_content/AppIoTHome",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
